@@ -1,5 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# Cust
+.idea/
+.playground/
+
 # dependencies
 /node_modules
 /.pnp
@@ -18,7 +22,7 @@
 /out/
 
 # production
-/build
+# /build # We'll use 'build' to deploy gh-pages
 
 # misc
 .DS_Store
