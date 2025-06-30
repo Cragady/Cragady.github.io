@@ -1,0 +1,8 @@
+.diffground{
+    position: fixed;
+    z-index: -2;
+}
+
+#diffground2{
+    background: rgba(0, 0, 0, 0.770);
+}
