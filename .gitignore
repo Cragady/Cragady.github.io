@@ -22,7 +22,7 @@
 /out/
 
 # production
-# /build # We'll use 'build' to deploy gh-pages
+/build
 
 # misc
 .DS_Store

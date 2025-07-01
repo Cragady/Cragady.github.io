@@ -8,7 +8,7 @@
     "old-start": "next start",
     "start": "serve out",
     "lint": "next lint",
-    "prod-prep": "npm run build && cp -r ./out ./build"
+    "prod-prep": "npm run build && cp -r ./out ./dist"
   },
   "dependencies": {
     "next": "15.3.4",
