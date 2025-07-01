@@ -6,6 +6,10 @@ Yet another portfolio. This won't be too serious, this is mainly a way to write 
 
 I am porting this, glorious bugs and all! (Mainly just visual oddities lmfao). After I get all the files to tsx instead of js or jsx, then this probably won't see the light of day for a good bit.
 
+Also, a lot of the projects listed are probably broken lol. Just look at the code I guess. Or don't, may be better if you don't. Might be better to look at my resume instead. Unfortunately, a fair portion of good code I've written is closed source.
+
+This also won't be a crazy conversion from JS to TS. This will have a lot of `any` types, and other such war-crimes. The real war-crime was using JavaScript along the way!
+
 ## From Next.js
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).

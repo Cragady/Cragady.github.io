@@ -30,17 +30,18 @@ const testArray = [
 ];
 
 export default function PSkillScroll() {
-  const skillTimerRef = useRef(null);
-  const skillResetterSetRef = useRef(null);
-  const skillShowerSetRef = useRef(null);
-  const [ skillShower, setSkillShower ] = useState([]);
+  const skillTimerRef = useRef<NodeJS.Timeout>(null);
+  const skillResetterSetRef = useRef<NodeJS.Timeout>(null);
+  const skillShowerSetRef = useRef<NodeJS.Timeout>(null);
+  const [ skillShower, setSkillShower ] = useState<any[]>([]);
   const [ skillWord, setSkillWord ] = useState('');
 
   useEffect(() => {
     skillTimerRef.current = skillTimerSet();
 
     return () => {
-      clearInterval(skillTimerRef.current);
+      const currentInt = skillTimerRef.current as unknown as number;
+      clearInterval(currentInt);
     }
   }, []);
 
@@ -54,7 +55,7 @@ export default function PSkillScroll() {
     function randSetter(){
       return Math.floor(Math.random() * testArray.length);
     };
-    const oldWord = document.querySelector('.pskill-word').textContent;
+    const oldWord = document.querySelector('.pskill-word')?.textContent;
     let hotSwap = randSetter();
     while(oldWord === testArray[hotSwap]){
       hotSwap = randSetter();
@@ -68,14 +69,17 @@ export default function PSkillScroll() {
       skillTimerRef.current = skillTimerSet();
       const pWord = document.querySelector('.pskill-word');
       const pShow = document.querySelector('.pskill-show');
+      // @ts-expect-error dumbfuckery
       if (pWord) pWord.style.opacity = 1;
-    if (pShow) pShow.style.opacity = 1;
+      // @ts-expect-error dumbfuckery
+      if (pShow) pShow.style.opacity = 1;
     }, 1000);
   };
 
 
   function skillResetter(skill) {
-    clearInterval(skillShowerSetRef);
+    const skillShowerSetRefNum = skillShowerSetRef.current as unknown as number;
+    clearInterval(skillShowerSetRefNum);
     return setTimeout(() => {
       setSkillWord(skill);
       setSkillShower([
@@ -85,21 +89,26 @@ export default function PSkillScroll() {
           funkPass={() => {return}}
           extraClassName='pskill-pic psk-pic-shower' />
       ]);
-      skillShowerSetRef.current = skillShowerTimerSet(skillTimerRef);
+      skillShowerSetRef.current = skillShowerTimerSet();
     }, 1500);
   };
 
   function wordHandler(e) {
-    clearInterval(skillTimerRef.current);
-    clearInterval(skillResetterSetRef.current);
+    clearInterval(skillTimerRef.current as unknown as number);
+    clearInterval(skillResetterSetRef.current as unknown as number);
     let skill;
     if(typeof e === 'string'){
       skill = e;
     } else if (typeof e === 'object'){
       skill = e.target.dataset.skill;
     };
-    document.querySelector('.pskill-word').style.opacity = 0;
-    document.querySelector('.pskill-show').style.opacity = 0;
+
+    const pWord = document.querySelector('.pskill-word');
+    const pShow = document.querySelector('.pskill-show');
+    // @ts-expect-error dumbfuckery
+    if (pWord) pWord.style.opacity = 0;
+    // @ts-expect-error dumbfuckery
+    if (pShow) pShow.style.opacity = 0;
     skillResetterSetRef.current = skillResetter(skill);
   };
 
@@ -123,7 +132,7 @@ export default function PSkillScroll() {
             return (
               <Skills key={skill}
                 img={`/images/skills/${skill}.png`} skill={skill}
-                funkPass={(e) => {wordHandler(e)}}
+                funkPass={(e: any) => {wordHandler(e)}}
                 extraClassName='pskill-pic'
               />
             );

@@ -13,16 +13,17 @@ export default function BackgroundDancer() {
     diffground();
   }, []);
 
-  function picRando(pathing, rando, inheriter, cb) {
-    let esperPic = pathing + rando[Math.floor(Math.random() * rando.length)];
+  function picRando(pathing: string, rando: any, inheriter?: any, cb?: any) {
+    const esperPic = pathing + rando[Math.floor(Math.random() * rando.length)];
     if(inheriter === esperPic){
       return cb(pathing, rando, inheriter, cb);
     };
     return esperPic;
   };
 
-  function fadeGround(fRun, fBack, runner, finisher, cb, middle) {
+  function fadeGround(fRun: any, fBack: any, runner: any, finisher: any, cb: any, middle: any) {
     const element = document.getElementById('diffground2');
+    if (!element) return;
     if(fRun){
       runner += 10;
     } else if(fBack){
@@ -55,6 +56,7 @@ export default function BackgroundDancer() {
       'RPG-game.PNG', 'RPS-game.PNG', 'trivia-game.PNG', 'web-scraper.PNG',
     'word-guess-pic.PNG'];
     const element = document.getElementById('diffground');
+    if (!element) return;
     const prePath = 'images/';
     const piPath = picRando(prePath, picArr);
     let passPi = piPath;
