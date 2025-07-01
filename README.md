@@ -2,6 +2,10 @@
 
 Yet another portfolio. This won't be too serious, this is mainly a way to write a statically generated next app as a portfolio, so I can move away from Heroku. This will mostly be a port from the old way of doing things.
 
+## A Porter's Note
+
+I am porting this, glorious bugs and all! (Mainly just visual oddities lmfao). After I get all the files to tsx instead of js or jsx, then this probably won't see the light of day for a good bit.
+
 ## From Next.js
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
