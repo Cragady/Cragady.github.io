@@ -77,7 +77,7 @@ export default function PSkillScroll() {
   };
 
 
-  function skillResetter(skill) {
+  function skillResetter(skill: any) {
     const skillShowerSetRefNum = skillShowerSetRef.current as unknown as number;
     clearInterval(skillShowerSetRefNum);
     return setTimeout(() => {
@@ -93,7 +93,7 @@ export default function PSkillScroll() {
     }, 1500);
   };
 
-  function wordHandler(e) {
+  function wordHandler(e: any) {
     clearInterval(skillTimerRef.current as unknown as number);
     clearInterval(skillResetterSetRef.current as unknown as number);
     let skill;

@@ -1,9 +1,10 @@
-/* 
-    This file is for reference only, for legacy's sake. OR if I manage to find 
-    a much cleaner way to implement the scrolling. A lot of hair being pulled 
-    over this fild. There's probably a much better way to get the results I 
+/* eslint-disable */
+/*
+    This file is for reference only, for legacy's sake. OR if I manage to find
+    a much cleaner way to implement the scrolling. A lot of hair being pulled
+    over this fild. There's probably a much better way to get the results I
     wanted. My friend, a CSS master says it could all be done in CSS. I looked
-    around, but it didn't do *exactly* what I wanted. But at this point, it 
+    around, but it didn't do *exactly* what I wanted. But at this point, it
     doesn't matter, I took it a different direction.
 */
 
@@ -50,7 +51,7 @@ export class ParaSkill extends Component{
 
     bottomSetter = () =>{
         const thiss = this;
-        
+
         if(window.outerWidth < 393){
             setTimeout(function(){
                 thiss.bottomHandler('38px');
@@ -78,7 +79,7 @@ export class ParaSkill extends Component{
             cssGrab = document.getElementsByClassName('skill-pic'),
             pointPass = ['true', scrollPoint],
             thiss = this;
-        
+
         for(let i = 0; i < cssGrab.length; i++){
             Object.assign(cssGrab[i].style, {maxHeight: heightSize});
         };
@@ -89,7 +90,7 @@ export class ParaSkill extends Component{
             currentElement.dataset.origpos = this.calculateRScroll(scrolled, scrollSpeed, 'oPos');
             currentElement.dataset.scroller = scrollSize;
         };
-        
+
         this.positionListener(scrolled, scrollComparator, cBottom, pBottom, currentElement, scrollSpeed, offsetter, pointPass);
         setTimeout(function() {
             thiss.positionListener(scrolled, scrollComparator, cBottom, pBottom, currentElement, scrollSpeed, offsetter, pointPass);
@@ -108,7 +109,7 @@ export class ParaSkill extends Component{
             cElem.style.bottom = pBot;
             cElem.style.transform = `translate3d(0, 500px, 0)`;
         } else if(cBot >= pBot){
-            return; 
+            return;
         } else {
             cElem.style.bottom = 100 + '%';
             cElem.style.transform = `translate3d(0, ${Math.round(s * sSpeed * ofS)}px, 0)`;
@@ -141,7 +142,7 @@ export class ParaSkill extends Component{
                 case type === undefined:
                     const right = (((scrolled * sSpeed) + oPos) - pottom) * -1;
                     returner = right;
-                    
+
                     break;
                 case type === 'pDivPos':
                     const scrollTar = (pottom - oPos) / sSpeed;
@@ -180,7 +181,7 @@ export class ParaSkill extends Component{
 
         if(grabber === true){
             return grabber = {
-                paraskillElements, 
+                paraskillElements,
                 sePlace,
                 paraskillQuantity,
                 pElem,
@@ -199,7 +200,7 @@ export class ParaSkill extends Component{
         window.requestAnimationFrame(function(){
             for(let i = 0; i < paraskillQuantity; i++){
                 const currentElement = paraskillElements[i];
-                let scrollPass = [undefined, 'break']; 
+                let scrollPass = [undefined, 'break'];
                 if(scrollPass === undefined){
                     scrollPass = ['true', scrollPoint];
                 };
@@ -226,8 +227,8 @@ export class ParaSkill extends Component{
 
                         {testArray.map(skill =>{
                             return (
-                                <Skills key={skill} 
-                                    img={`/images/skills/${skill}.png`} skill={skill} 
+                                <Skills key={skill}
+                                    img={`/images/skills/${skill}.png`} skill={skill}
                                     funkPass={this.wordHandler}
                                     extraClassName='skill-pic'
                                 />
