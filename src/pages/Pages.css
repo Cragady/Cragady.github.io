@@ -1,76 +1,3 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-html, body, #root, #app-cont, .App, .diffground, .diffground2{
-  height: 100%;
-  width: 100%;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-#app-cont, #wrap{
-  min-height: 100%;
-}
-
-#main{
-  overflow: auto;
-  padding-bottom: 150px;
-}
-
-.App {
-  text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 #main-contact{
     background: rgba(233, 228, 228, 0.199);
 }
@@ -122,7 +49,7 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
+}    
 
 .portimage, .view-destroyer{
     width: 100%;
@@ -142,7 +69,7 @@ a {
 .destroyer-text{
     font-size: 2em;
     color: #fff;
-}
+}  
 
 .another-a{
     color: rgb(68, 197, 230);
@@ -162,10 +89,4 @@ a {
 .badge-img{
     max-width: 80%;
     height: auto;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }

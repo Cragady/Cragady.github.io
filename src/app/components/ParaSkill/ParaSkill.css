@@ -1,0 +1,99 @@
+.paraskill-container{
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.paraskill{
+    position: absolute;
+    bottom: 100%;
+    height: 200%;
+    width: 100%;
+    z-index: -2;
+    /* background: url('https://www.goodmorningimagesforlover.com/wp-content/uploads/2018/10/dark-side-cool-background-1066x617.jpg') center center / cover no-repeat; */
+}
+
+.para-elem{
+    position: absolute;
+    bottom: 0;
+    color: black;
+    z-index: -1;
+}
+
+.para-sibling{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 30s ease infinite;
+    -moz-animation: Gradient 30s ease infinite;
+    animation: Gradient 30s ease infinite;
+    z-index: -4;
+}
+
+.ps-child{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.733);
+    mix-blend-mode: multiply;
+    z-index: -3;
+}
+
+.skill-word{
+    font-size: 10vw;
+    color: white;
+    /* opacity: 1; */
+}
+
+.skill-pic{
+    max-height: 50px;
+    max-width: auto;
+    margin: 5px;
+    background: rgba(128, 128, 128, 0.13);
+    border: 1px solid transparent;
+    z-index: inherit;
+}
+
+.skill-pic:hover{
+    background: rgba(93, 131, 95, 0.4);
+}
+
+@-webkit-keyframes Gradient{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{ background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes Gradient{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes Gradient{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
