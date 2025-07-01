@@ -1,5 +1,7 @@
 # YAP
 
+Home of https://cragady.github.io and https://craigwright2048.com
+
 Yet another portfolio. This won't be too serious, this is mainly a way to write a statically generated next app as a portfolio, so I can move away from Heroku. This will mostly be a port from the old way of doing things.
 
 ## A Porter's Note
