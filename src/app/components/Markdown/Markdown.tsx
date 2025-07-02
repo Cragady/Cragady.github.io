@@ -8,13 +8,27 @@ interface MarkdownProps {
   // eslint-disable-next-line
   children?: any;
   markdownData?: string;
+  viewRaw?: boolean;
+  fileType?: string;
 }
 
 export default function Markdown(props: MarkdownProps) {
   const passedData = props.children ? props.children : props.markdownData;
-  const markdown = passedData || markdownTest;
+  let markdown = passedData || markdownTest;
+  const raw = props.viewRaw === null ? false : props.viewRaw;
+  const type = props.fileType || '.md';
+
+  if (raw) {
+    markdown = `
+\`\`\`${type}
+${markdown}
+\`\`\`
+`;
+  }
 
   return (
-    <MDown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{markdown}</MDown>
+    <MDown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} unwrapDisallowed={true}>
+      {markdown}
+    </MDown>
   )
 }

@@ -10,8 +10,10 @@ export type PictureData = PictureInfo[];
 
 const pictureInfoData = [
   {
-    link: "https://cragady.github.io/",
-    repo: "https://github.com/Cragady/Cragady.github.io",
+    // link: "https://old.cragady.github.io/",
+    // repo: "https://github.com/Cragady/old.Cragady.github.io",
+    link: "/projects/OldPortfolios",
+    repo: "/projects/OldPortfolios",
     title: "Basic Portfolio",
     piPath: "/images/basic-portfolio.PNG",
     tags: [
@@ -23,8 +25,10 @@ const pictureInfoData = [
     ]
   },
   {
-    link: "https://cragady.github.io/Bootstrap-Portfolio/",
-    repo: "https://github.com/Cragady/Bootstrap-Portfolio",
+    // link: "https://cragady.github.io/Bootstrap-Portfolio/",
+    // repo: "https://github.com/Cragady/Bootstrap-Portfolio",
+    link: "/projects/OldPortfolios",
+    repo: "/projects/OldPortfolios",
     title: "Bootstrap Portfolio",
     piPath: "/images/bootstrap-portfolio.PNG",
     tags: [
@@ -36,8 +40,10 @@ const pictureInfoData = [
     ]
   },
   {
-    link: "https://cragady.github.io/Responsive-Portfolio/",
-    repo: "https://github.com/Cragady/Responsive-Portfolio",
+    // link: "https://cragady.github.io/Responsive-Portfolio/",
+    // repo: "https://github.com/Cragady/Responsive-Portfolio",
+    link: "/projects/OldPortfolios",
+    repo: "/projects/OldPortfolios",
     title: "Responsive Portfolio",
     piPath: "/images/responsive-portfolio.PNG",
     tags: [

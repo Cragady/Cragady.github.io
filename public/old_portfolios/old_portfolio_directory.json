@@ -1,0 +1,26 @@
+{
+  "commonFiles": [
+    "README.md",
+    "contact.html",
+    "index.html",
+    "portfolio.html",
+    "_NAME__style.css",
+    "reset.css"
+  ],
+  "cssPath": "/css/",
+  "portfolioPath": "/old_portfolios/",
+  "structure": [
+    {
+      "name": "Bootstrap-Portfolio",
+      "hasCss": false
+    },
+    {
+      "name": "Responsive-Portfolio",
+      "hasCss": true
+    },
+    {
+      "name": "old.Cragady.github.io",
+      "hasCss": true
+    }
+  ]
+}
