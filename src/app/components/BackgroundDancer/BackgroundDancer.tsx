@@ -4,11 +4,11 @@ import { useEffect } from 'react';
 
 import './BackgroundDancer.css';
 
-export default function BackgroundDancer() {
-    // constructor(props){
-    //     super(props);
-    // };
+const PIC_LIFETIME = 90000;
+// const PIC_LIFETIME = 5000;
 
+
+export default function BackgroundDancer() {
   useEffect(() => {
     diffground();
   }, []);
@@ -30,21 +30,15 @@ export default function BackgroundDancer() {
       runner -= 10;
     };
     if(runner === finisher && middle !== undefined){
-      Object.assign(element.style, {
-        background: 'rgba(0, 0, 0, 1)'
-      });
+      element.style.background = 'rgba(0, 0, 0, 1)';
       middle();
       setTimeout(function(){cb(false, true, 1000, 770, cb)}, 600);
       return;
     } else if(runner === finisher && middle === undefined){
-      Object.assign(element.style, {
-        background: 'rgba(0, 0, 0, 0.770)'
-      });
+      element.style.background = 'rgba(0, 0, 0, 0.770)';
       return;
     };
-    Object.assign(element.style, {
-      background: `rgba(0, 0, 0, 0.${runner})`
-    });
+    element.style.background = `rgba(0, 0, 0, 0.${runner})`;
     setTimeout(function(){cb(fRun, fBack, runner, finisher, cb, middle)}, 35);
   };
 
@@ -57,35 +51,32 @@ export default function BackgroundDancer() {
     'word-guess-pic.PNG'];
     const element = document.getElementById('diffground');
     if (!element) return;
-    const prePath = 'images/';
+    const prePath = '/images/';
     const piPath = picRando(prePath, picArr);
     let passPi = piPath;
-    Object.assign(element.style, {
-      background: `url(${piPath})`,
-      position: 'fixed',
-      backgroundSize: '100% 100vh',
-      height: '100%',
-      minHeight: '100%',
-      width: '100%',
-      zIndex: '-2'
-    });
+    element.style.background = `url(${piPath})`;
+    element.style.position = 'fixed';
+    element.style.backgroundSize = '100% 100vh';
+    element.style.height = '100%';
+    element.style.minHeight = '100%';
+    element.style.width = '100%';
+    element.style.zIndex = '-2';
+
     setInterval(function(){
       const piPath = picRando(prePath, picArr, passPi, picRando);
       passPi = piPath;
       fadeGround(true, false, 770, 1000, fadeGround,
         function(){
-          Object.assign(element.style, {
-            background: `url(${piPath})`,
-            position: 'fixed',
-            backgroundSize: '100% 100vh',
-            height: '100%',
-            minHeight: '100%',
-            width: '100%',
-            zIndex: '-2'
-          });
+          element.style.background = `url(${piPath})`;
+          element.style.position = 'fixed';
+          element.style.backgroundSize = '100% 100vh';
+          element.style.height = '100%';
+          element.style.minHeight = '100%';
+          element.style.width = '100%';
+          element.style.zIndex = '-2';
         }
       );
-    }, 90000);
+    }, PIC_LIFETIME);
   };
 
   return(
