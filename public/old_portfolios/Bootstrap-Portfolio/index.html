@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html, body{
+            height: 100%; /*for footer*/
+        }
+        body{
+            background: url("/images/paisley.png");
+        }
+        .container-fluid{
+            max-width: 960px;
+        }
+        #wrap{
+            min-height: 100%; /*for footer*/
+            padding-bottom: 90px; /*this needs to be larger than footer height*/
+        }
+        .footer{
+            position: relative;
+            margin-top: -60px;
+            height: 60px;
+            padding-top: 15px;
+        }
+    </style>
+    <title>About Me</title>
+</head>
+<body>
+    <div id="wrap">
+        <header class="p-0 m-0 bg-light border-bottom border-secondary">
+            <div class="container-fluid">
+                <div class="row px-2 py-0 align-items-center">
+                    <!-- logo -->
+                    <a class="col-md-3 col-sm-12 mr-auto p-2 my-0 text-light text-center font-weight-bold bg-info" href="index.html"><h3>Craig Wright</h3></a>
+                    <!-- nav links -->
+                    <ul class="col-md-auto col-sm-12 px-0 nav justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link active border-right text-muted" href="index.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active border-right text-muted" href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-muted" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <br><br><br>
+
+        <section class="container-fluid px-4">
+            <div class="row p-3 align-items-center bg-white border border-secondary">
+                <div class="col-md-12">
+                    <h1 class="text-info border-bottom">About Me</h1>
+                </div>
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <img class="img-responsive img-thumbnail" src="/images/20180210_175508v2.png" alt="Pic of Me">
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <p>
+                            My name is Craig, I'm hoping to get myself into a job field that is a bit more
+                            tech oriented than my current job. I usually like to go longboarding when the
+                            weather is nice, or if that seems a bit too quick paced for me at the time I'll
+                            just go on a walk. I like gaming, and as of writing this, I am making my way through
+                            Dark Souls 3 after taking a bit of a break from Kingdom Hearts.
+                        </p>
+                    </div>
+                    <div class="row">
+                        <p>
+                            My interest in web development began as I was taking a class through SLCC,
+                            Living in a Digital World, there was an assignment that had us build a
+                            working wiki page about a mock event we were to set up. To style the page,
+                            I went into the pages source and started changing things to suit the style of the
+                            project. Since then it's been a fascination, and now I've decided to take steps towards
+                            becoming a web developer.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <footer class="footer text-center bg-secondary text-white border-top border-info justify-content-center">
+        Copyright &copy;
+    </footer>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</body>
+</html>
