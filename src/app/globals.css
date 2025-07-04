@@ -1,12 +1,61 @@
+/* NOTE: other sizes */
+/*
+* 20rem - 320px
+* 40rem - 640px
+*       - 481px
+* 64rem - 1024px
+* 80rem - 1280px
+* 96rem - 1536px
+*/
+
+/* NOTE: find and replace if breakpoint sized needs changing */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --bs-breakpoint-xs: 0;
+  --bs-breakpoint-sm: 576px;
+  --bs-breakpoint-md: 768px;
+  --bs-breakpoint-lg: 992px;
+  --bs-breakpoint-xl: 1200px;
+  --bs-breakpoint-xxl: 1400px;
+
+  --max-width: 540px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  :root {
+    --max-width: 540px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  :root {
+    --max-width: 720px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  :root {
+    --max-width: 960px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  :root {
+    --max-width: 1140px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  :root {
+    --max-width: 1320px;
   }
 }
 
