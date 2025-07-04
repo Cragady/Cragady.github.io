@@ -6,7 +6,8 @@ export default function About() {
 
   return(
     <BodySection
-      className="py-2 mb-3"
+      className={`py-2 mb-3`}
+      headingClassName={`${styles['about-title']}`}
       imgSlot={<ImgMe className={styles['img-me-override']} />}
       titleLevel={1}
       titleText="About Me"
@@ -43,7 +44,7 @@ export default function About() {
         a work around, or a new approach is necessary for the completion of the overall goal.
       </p>
 
-      <h2 className={styles['text-white']}>A more personal and relaxed note:</h2>
+      <h2 className={`${styles['about-second-heading']}`}>A more personal and relaxed note:</h2>
 
       <p className={`${styles['p-about']}`}>
         I have several different hobbies, most the time I can&apos;t keep up with them all as I like to experience a plethora

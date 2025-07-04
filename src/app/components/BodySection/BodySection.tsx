@@ -7,7 +7,8 @@ interface BodySectionProps {
   imgSlot?: JSX.Element;
   titleLevel: number;
   titleText: string;
-  className?: string | undefined;
+  className?: string;
+  headingClassName?: string;
 }
 
 export default function BodySection({
@@ -16,11 +17,15 @@ export default function BodySection({
   titleLevel = 2,
   titleText = "Hello, World!",
   className,
+  headingClassName,
 }: BodySectionProps) {
 
   function Title() {
 
-    const titleClass = styles.heading;
+    let titleClass = styles.heading;
+    titleClass += headingClassName !== undefined
+      ? ' ' + headingClassName
+      : '';
 
     switch (titleLevel) {
       case 1:
