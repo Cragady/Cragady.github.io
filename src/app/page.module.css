@@ -28,10 +28,7 @@
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  text-align: center;
 }
 
 .main ol {
@@ -54,6 +51,26 @@
   padding: 2px 4px;
   border-radius: 4px;
   font-weight: 600;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.align-self-center {
+  align-self: center;
 }
 
 .ctas {

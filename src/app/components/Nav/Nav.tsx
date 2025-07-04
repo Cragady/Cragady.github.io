@@ -22,7 +22,7 @@ export default function Nav() {
             className={
               pathname === '/' ? 'nav-link active' : 'nav-link inactive'
             }
-            id={
+            data-active={
               pathname === '/' ? 'active-cust' : ''
             }
           >
@@ -33,7 +33,7 @@ export default function Nav() {
           <Link
             href='/portfolio'
             className={pathname === '/portfolio' ? 'nav-link active' : 'nav-link inactive'}
-            id={pathname === '/portfolio' ? 'active-cust' : ''}
+            data-active={pathname === '/portfolio' ? 'active-cust' : ''}
           >
             Portfolio
           </Link>
@@ -42,7 +42,7 @@ export default function Nav() {
           <Link
             href='/about'
             className={pathname === '/about' ? 'nav-link active' : 'nav-link inactive'}
-            id={pathname === '/about' ? 'active-cust' : ''}
+            data-active={pathname === '/about' ? 'active-cust' : ''}
           >
             About Me
           </Link>

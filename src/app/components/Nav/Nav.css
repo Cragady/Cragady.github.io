@@ -1,18 +1,25 @@
+.nav {
+  list-style: none;
+  flex-wrap: wrap;
+}
+
 .top-nav{
     background-color: #2cf68700;
     border-color: #2b2523;
     border-radius: 5px;
-    margin: 14px;
+    /* margin: 14px; */
     color: rgb(216, 234, 240);
 }
 
 .nav-cust {
+    height: 100%;
+    display: flex;
     background: rgb(92, 90, 90);
     border-color: #2b2523;
     border-style: outset;
     border-radius: 5px;
     padding: 6px;
-    margin: 14px;
+    /* margin: 14px; */
     border-width: 8px;
     color: rgb(216, 234, 240);
     -webkit-box-shadow: 4px 8px 19px 6px rgba(0, 0, 0, 0.75);
@@ -20,10 +27,18 @@
     box-shadow: 4px 8px 19px 6px rgba(0, 0, 0, 0.75);
 }
 
+.nav-link {
+  display: flex;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  align-items: center;
+  color: red;
+}
+
 .port-head{
     background: rgba(92, 90, 90, 0.747);
     padding-bottom: 5px;
-    margin: 8px 0 8px 0;
+    /* margin: 8px 0 8px 0; */
     border: 2px solid rgba(92, 248, 227, 0.349);
 }
 
@@ -31,7 +46,7 @@
     background: rgba(80, 86, 97, 0.856);
     border-radius: 8px;
     padding: 6px;
-    margin: 14px;
+    /* margin: 14px; */
     border-width: 4px;
     color: rgb(216, 234, 240);
     -webkit-box-shadow: 2px 4px 9px 3px rgba(39, 44, 42, 0.5);
@@ -60,7 +75,7 @@
     position: absolute;
     z-index: 7;
     background-color: transparent;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .btn-ports:focus{
@@ -106,11 +121,10 @@
     color: #aac8d1;
 }
 
-#active-cust{
+.nav-link[data-active="active-cust"] {
     backface-visibility: hidden;
     position: relative;
     cursor: pointer;
-    display: inline-block;
     white-space: nowrap;
     background: rgba(0%, 0%, 0%, 0);
     border-radius: 10px;
@@ -127,7 +141,9 @@
 
 @media(max-width: 322px){
     .li-item-cust{
+      /*
         margin-left: auto;
         margin-right: auto;
+      */
     }
 }

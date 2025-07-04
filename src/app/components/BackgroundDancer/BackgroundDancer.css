@@ -6,3 +6,8 @@
 #diffground2{
     background: rgba(0, 0, 0, 0.770);
 }
+
+#diffground, #diffground2 {
+  height: 100%;
+  width: 100%;
+}

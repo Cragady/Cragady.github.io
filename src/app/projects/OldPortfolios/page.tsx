@@ -1,5 +1,6 @@
 'use client';
 
+import BodySection from '@/app/components/BodySection/BodySection';
 import Markdown from '@/app/components/Markdown/Markdown';
 import { JSX, useEffect, useRef, useState } from 'react';
 import root from 'react-shadow';
@@ -13,34 +14,6 @@ async function requestPortfolioDirectory() {
     console.error(error);
     return null;
   }
-}
-
-function BodySection(props: { children: any, titleLevel: number, titleText: string }) {
-
-  function Title() {
-
-    const titleClass = 'text-center border-top border-secondary text-white';
-
-    switch (props.titleLevel) {
-      case 1:
-        return <h1 className={titleClass}>{props.titleText}</h1>
-      case 2:
-        return <h2 className={titleClass}>{props.titleText}</h2>
-      default:
-        return <h2 className={titleClass}>{props.titleText}</h2>
-    }
-  }
-
-  return(
-    <section className="container cont-cust py-2">
-      <div className="card-header">
-        <Title />
-      </div>
-
-      {props.children}
-
-    </section>
-  );
 }
 
 export default function OldPortfolios() {
