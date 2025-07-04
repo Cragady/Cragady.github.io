@@ -1,4 +1,4 @@
-import './Nav.css';
+import styles from './Nav.module.css';
 
 //temporary array for laying the buttons,
 //I will probably find a smarter way to do this later
@@ -25,16 +25,16 @@ function accordionBtn(e: any){
 
 export default function PortNav(props: any) {
   return(
-    <section className='port-head rounded'>
-      <h1 className='text-white'>Projects</h1>
+    <section className={styles['port-head']}>
+      <h1 className={styles['port-head-heading']}>Projects</h1>
 
-      <div className='my-1 nav-cust-port'>
+      <div className={styles['nav-cust-port']}>
         <div>Filtered By: </div>
-        <div className='btn-acc-holder mx-auto'>
+        <div className={styles['btn-acc-holder']}>
           <button className='btn dropdown-toggle btn-accordion' onClick={accordionBtn}>{props.fType ? props.fType : 'All'}</button>
         </div>
         <div className='types-holder'>
-          <div className='btn-in-hiding' id='show-hide'>
+          <div className={styles['btn-in-hiding']} id='show-hide'>
             {/* @ts-expect-error defaultValue is an ancient artifact */}
             <button className='btn btn-port m-1' name='' defaultValue onClick={(event) => {props.onClick(event); accordionBtn(event)}} value='' >All</button>
             {butArr.map(types =>{

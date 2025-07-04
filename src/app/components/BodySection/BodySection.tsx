@@ -1,24 +1,26 @@
-import './BodySection.css';
+import { JSX } from 'react';
+import ContentArea from '../ContentArea/ContentArea';
+import styles from './BodySection.module.css';
 
 interface BodySectionProps {
   children: any;
+  imgSlot?: JSX.Element;
   titleLevel: number;
   titleText: string;
   className?: string | undefined;
-  maxWidth: number,
 }
 
 export default function BodySection({
   children,
+  imgSlot = undefined,
   titleLevel = 2,
   titleText = "Hello, World!",
   className,
-  maxWidth = 1200,
 }: BodySectionProps) {
 
   function Title() {
 
-    const titleClass = 'text-center border-top border-secondary text-white';
+    const titleClass = styles.heading;
 
     switch (titleLevel) {
       case 1:
@@ -35,14 +37,15 @@ export default function BodySection({
   const classPass = className !== undefined ? className : '';
 
   return(
-    <section className={`container cont-cust py-2 ${classPass}`}>
-      <div className="card-header">
+    <ContentArea className={`container ${styles['cont-cust']} py-2 ${classPass}`}>
+      <div className={styles['card-header']}>
+        {imgSlot !== undefined && imgSlot}
         <Title />
       </div>
 
       {children}
 
-    </section>
+    </ContentArea>
   );
 }
 

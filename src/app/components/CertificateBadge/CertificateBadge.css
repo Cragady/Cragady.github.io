@@ -1,5 +1,9 @@
+.badge {
+  margin-top: 1.5rem;
+}
+
 .badge-img{
-    max-width: 80%;
-    height: auto;
+  max-width: 80%;
+  height: auto;
 }
 

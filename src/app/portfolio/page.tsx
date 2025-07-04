@@ -5,6 +5,8 @@ import PortNav from '../components/Nav/PortNav';
 import Ports from '../components/Ports/Ports';
 import { PictureInfo, PictureData, pictureInfoData } from '@/utils/PicData';
 import '../globals.css';
+import ContentArea from '../components/ContentArea/ContentArea';
+import styles from './page.module.css';
 
 export default function Portfolio() {
 
@@ -26,15 +28,17 @@ export default function Portfolio() {
   }
 
   return(
-    <section className='container px-0'>
+    <ContentArea className='container px-0'>
       <PortNav fType={filterType} onClick={filterChange} />
-      <div id='my-ports' className='container px-0 no-gutters row'>
+      <div id='my-ports' className={styles['my-ports'] + ' container px-0 no-gutters row'}>
         {picData !== undefined &&
           picData.map((pics: PictureInfo, i) =>{
             const {piPath, title, link, repo} = pics;
             return filterType === '' ?
               (
-                <Ports _id={'ports-' + i + '-pic-data-info'} key={i + '_pic-data-info'} piPath={piPath}
+                <Ports _id={'ports-' + i + '-pic-data-info'} key={i + '_pic-data-info'}
+                  className={styles.ports}
+                  piPath={piPath}
                   title={title} link={link} repo={repo}
                   onMouseOver={() => handleMouseOver(title, 'visible')}
                   onMouseLeave={() => {handleMouseOver(title, 'hidden')}}
@@ -43,7 +47,9 @@ export default function Portfolio() {
             : !pics.tags.includes(filterType.toLowerCase()) ?
               null
             : (
-              <Ports _id={'ports-elsed-' + i + '-pic-data-info'} key={i + '_pic-data-info_elsed'} piPath={piPath}
+              <Ports _id={'ports-elsed-' + i + '-pic-data-info'} key={i + '_pic-data-info_elsed'}
+                className={styles.ports}
+                piPath={piPath}
                 title={title} link={link} repo={repo}
                 onMouseOver={() => handleMouseOver(title, 'visible')}
                 onMouseLeave={() => {handleMouseOver(title, 'hidden')}}
@@ -52,7 +58,7 @@ export default function Portfolio() {
           })
         }
       </div>
-    </section>
+    </ContentArea>
   );
 
 }

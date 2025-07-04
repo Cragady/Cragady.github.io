@@ -4,6 +4,7 @@ import styles from './page.module.css';
 import BodySection from './components/BodySection/BodySection';
 import PSkillScroll from './components/PSkillScroll/PSkillScroll';
 import CertificateBadge from './components/CertificateBadge/CertificateBadge';
+import ImgMe from './components/ImgMe/ImgMe';
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
             height={38}
             priority
           /> */}
-          <img className='rounded img-fluid img-me mb-1' src='/images/propic2.jpg' alt='Craig Wright' />
+          <ImgMe />
         </div>
 
         <div className={`${styles.col} ${styles['align-self-center']} quick-intro text-white`}>
