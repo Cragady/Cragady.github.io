@@ -21,8 +21,10 @@ export default function Ports({ _id, className, piPath, title, link, repo, onMou
       <img className='portimage' src={piPath} alt={title + ' project'} />
       <div className='view-destroyer' id={'cover-' + title}>
         <h1 className='col-12 destroyer-text'>{title}</h1>
-        <a className='col another-a' href={link} target='_blank'>App</a>
-        <a className='col another-a' href={repo} target='_blank'>Repository</a>
+        <div>
+          <a className='another-a' href={link} target='_blank'>App</a>
+          <a className='another-a' href={repo} target='_blank'>Repository</a>
+        </div>
       </div>
     </div>
   );
