@@ -8,6 +8,7 @@ interface BodySectionProps {
   titleLevel: number;
   titleText: string;
   className?: string;
+  cardClassName?: string;
   headingClassName?: string;
 }
 
@@ -17,12 +18,14 @@ export default function BodySection({
   titleLevel = 2,
   titleText = "Hello, World!",
   className,
+  cardClassName,
   headingClassName,
 }: BodySectionProps) {
 
   function Title() {
 
     let titleClass = styles.heading;
+
     titleClass += headingClassName !== undefined
       ? ' ' + headingClassName
       : '';
@@ -40,10 +43,15 @@ export default function BodySection({
   }
 
   const classPass = className !== undefined ? className : '';
+  let cardClass = styles['card-header'];
+
+  cardClass += cardClassName !== undefined
+    ? ' ' + cardClassName
+    : '';
 
   return(
     <ContentArea className={`container ${styles['cont-cust']} py-2 ${classPass}`}>
-      <div className={styles['card-header']}>
+      <div className={cardClass}>
         {imgSlot !== undefined && imgSlot}
         <Title />
       </div>

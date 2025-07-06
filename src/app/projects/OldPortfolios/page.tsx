@@ -1,9 +1,13 @@
 'use client';
 
+import root from 'react-shadow';
 import BodySection from '@/app/components/BodySection/BodySection';
+import Button from '@/app/components/Button/Button';
 import Markdown from '@/app/components/Markdown/Markdown';
 import { JSX, useEffect, useRef, useState } from 'react';
-import root from 'react-shadow';
+import styles from './page.module.css';
+import globalStyles from '@/app/css_modules/global.module.css';
+
 
 async function requestPortfolioDirectory() {
   try {
@@ -48,10 +52,10 @@ export default function OldPortfolios() {
 
   function mapPortfolioButton(name: string, fullPath: string, i: number, mapFiles: string[]) {
     return (
-      <li key={`portfolio-button-setter-${i}`} className='text-left'>
-        <button onClick={(e) => { portfolioButtonClickHandler(e, mapFiles) }} data-public-path={fullPath} data-name={name}>
+      <li className={styles['li-btn-house']} key={`portfolio-button-setter-${i}`}>
+        <Button onClick={(e) => { portfolioButtonClickHandler(e, mapFiles) }} dataAttributes={{'data-public-path': fullPath, 'data-name': name}}>
           {name}
-        </button>
+        </Button>
       </li>
     )
   };
@@ -77,10 +81,10 @@ export default function OldPortfolios() {
 
   function mapFileButton(name: string, fullPath: string, i: number) {
     return (
-      <li key={`file-button-fetcher-${i}`} className='text-left'>
-        <button onClick={fileButtonClickHandler} data-public-path={fullPath} data-name={name}>
+      <li className={styles['li-btn-house']} key={`file-button-fetcher-${i}`}>
+        <Button onClick={fileButtonClickHandler} dataAttributes={{'data-public-path': fullPath, 'data-name': name}}>
           {name}
-        </button>
+        </Button>
       </li>
     )
   }
@@ -149,8 +153,8 @@ export default function OldPortfolios() {
 
   return (
     <>
-      <BodySection titleText={'Old Portfolios'} titleLevel={1}>
-        <p className="p-2 mt-4 p-about">
+      <BodySection className={styles['body-section-spacer']} titleText={'Old Portfolios'} titleLevel={1} cardClassName={styles['card-header-spacer']}>
+        <p className={globalStyles['p-about']}>
           This page will act as a directory for old portfolios that were required by the classes
           I&apos;ve attended. These are massively underwhelming, and I&apos;m keeping these around
           just for legacy&apos;s sake, to look at, cringe at, and make fun of.
@@ -162,15 +166,15 @@ export default function OldPortfolios() {
 
       </BodySection>
 
-      {files && <BodySection titleText={'Files & Link'} titleLevel={2}>
+      {files && <BodySection className={styles['body-section-spacer']} titleText={'Files & Link'} titleLevel={2} cardClassName={styles['card-header-spacer']}>
 
         <ul className='px-5'>
           {files}
         </ul>
       </BodySection>}
 
-      {fileData && <BodySection titleText={`File Preview: ${projectName}`} titleLevel={2}>
-        <button onClick={viewRawButtonHandler}>{viewRaw ? 'View Parsed' : 'View Raw'}</button>
+      {fileData && <BodySection className={styles['body-section-spacer']} titleText={`File Preview: ${projectName}`} titleLevel={2} cardClassName={styles['card-header-spacer']}>
+        <Button onClick={viewRawButtonHandler}>{viewRaw ? 'View Parsed' : 'View Raw'}</Button>
         <root.div className='root-div text-left' ref={shadowRef}>
           {
             fileExt === 'html' && !viewRaw
