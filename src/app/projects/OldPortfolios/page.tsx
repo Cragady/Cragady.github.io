@@ -174,7 +174,7 @@ export default function OldPortfolios() {
       </BodySection>}
 
       {fileData && <BodySection className={styles['body-section-spacer']} titleText={`File Preview: ${projectName}`} titleLevel={2} cardClassName={styles['card-header-spacer']}>
-        <Button onClick={viewRawButtonHandler}>{viewRaw ? 'View Parsed' : 'View Raw'}</Button>
+        <Button className={styles['raw-btn']} onClick={viewRawButtonHandler}>{viewRaw ? 'View Parsed' : 'View Raw'}</Button>
         <root.div className='root-div text-left' ref={shadowRef}>
           {
             fileExt === 'html' && !viewRaw
