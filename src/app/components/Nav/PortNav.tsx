@@ -1,3 +1,4 @@
+import Button from '../Button/Button';
 import styles from './Nav.module.css';
 
 //temporary array for laying the buttons,
@@ -31,14 +32,13 @@ export default function PortNav(props: any) {
       <div className={styles['nav-cust-port']}>
         <div>Filtered By: </div>
         <div className={styles['btn-acc-holder']}>
-          <button className='btn dropdown-toggle btn-accordion' onClick={accordionBtn}>{props.fType ? props.fType : 'All'}</button>
+          <Button isDropdown={true} onClick={accordionBtn}>{props.fType ? props.fType : 'All'}</Button>
         </div>
         <div className='types-holder'>
           <div className={styles['btn-in-hiding']} id='show-hide'>
-            {/* @ts-expect-error defaultValue is an ancient artifact */}
-            <button className='btn btn-port m-1' name='' defaultValue onClick={(event) => {props.onClick(event); accordionBtn(event)}} value='' >All</button>
+            <Button className={styles['btn-port']} onClick={(event) => {props.onClick(event); accordionBtn(event)}}>All</Button>
             {butArr.map(types =>{
-              return(<button className='btn btn-port m-1' name={types} key={types + '-skills'} onClick={(event) => {props.onClick(event); accordionBtn(event)}}>{types}</button>)
+              return(<Button className={styles['btn-port']} name={types} key={types + '-skills'} onClick={(event) => {props.onClick(event); accordionBtn(event)}}>{types}</Button>)
             })}
           </div>
         </div>

@@ -81,15 +81,8 @@
     max-width: 30%;
 }
 
-.btn-ports{
-    position: absolute;
-    z-index: 7;
-    background-color: transparent;
-    /* margin-bottom: 10px; */
-}
-
-.btn-ports:focus{
-    background-color: initial;
+.btn-port {
+  margin: 0.25rem;
 }
 
 .autocomplete{
@@ -102,7 +95,7 @@
     display: table;
     overflow: auto;
     clear: both;
-    margin: 0 auto;
+    margin: 0 auto 0.5rem auto;
 }
 
 .btn-ports{
